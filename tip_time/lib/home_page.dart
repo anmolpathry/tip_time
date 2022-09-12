@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   };
   int? currentRadio;
   bool isSwitched = false;
-  double total = 0.0;
+  double total = 0.00;
   bool _validate = false;
 
   @override
@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                "Tip amount: \$ ${total}",
+                "Tip amount: \$ ${total.toStringAsFixed(2)}",
               ),
               SizedBox(width: 8)
             ],
@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
     // TODO: completar
 
     if (costService.text.isEmpty) {
-      total = 0.0;
+      total = 0.00;
     } else {
       total = double.parse(costService.text);
       if (currentRadio == 0) {
